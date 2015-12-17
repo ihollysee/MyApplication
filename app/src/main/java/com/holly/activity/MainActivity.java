@@ -23,18 +23,26 @@ import com.holly.user.activity.R;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private SceneAddressRecyclerAdapter mSceneAddressAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        initView();
+
         startAlarm();
         initSceneAddressAdapter();
         initSceneAddressRecyclerView();
         initData();
         mSceneAddressAdapter.setSelectedPosition(mSceneAddressAdapter.getSpaceHolderSize());
+    }
+
+    private void initView() {
+        findViewById(R.id.scene_address_add).setOnClickListener(this);
+        findViewById(R.id.scene_address_remove).setOnClickListener(this);
     }
 
     private void initData() {
@@ -58,17 +66,19 @@ public class MainActivity extends AppCompatActivity {
 
 
     private void initSceneAddressAdapter() {
-        mSceneAddressAdapter = new SceneAddressRecyclerAdapter(getApplicationContext());
+        mSceneAddressAdapter = new SceneAddressRecyclerAdapter(getApplicationContext(), mSceneAddressRecyclerView);
         mSceneAddressAdapter.setScreenWidth(getScreenWidth());
         int mSpaceHolderSize = mSceneAddressAdapter.initSpaceHolderSize();
         mSceneAddressAdapter.initOffset(mSpaceHolderSize);
         mSceneAddressAdapter.setSceneAddressChangedListener(getSceneAddressChangedListener());
     }
 
+    private RecyclerView mSceneAddressRecyclerView;
+
     private void initSceneAddressRecyclerView() {
         View rootView = findViewById(R.id.root_view);
         if (rootView != null) {
-            RecyclerView mSceneAddressRecyclerView = (RecyclerView) rootView.findViewById(R.id.scene_address_list);
+            mSceneAddressRecyclerView = (RecyclerView) rootView.findViewById(R.id.scene_address_list);
             mSceneAddressRecyclerView.setLayoutManager(mSceneAddressAdapter.getLayoutManager());
             mSceneAddressRecyclerView.setItemAnimator(new DefaultItemAnimator());
             mSceneAddressRecyclerView.setHasFixedSize(true);
@@ -127,6 +137,18 @@ public class MainActivity extends AppCompatActivity {
         mScreenSize.height = screenHeigh;
         return mScreenSize;
 
+    }
+
+    @Override
+    public void onClick(View v) {
+        if (v.getId() == R.id.scene_address_add) {
+            RecyclerView.ItemDecoration item= new RecyclerView.ItemDecoration() {
+            }
+            mSceneAddressRecyclerView.addItemDecoration();
+
+        } else if (v.getId() == R.id.scene_address_remove) {
+
+        }
     }
 
     public static class ScreenSize {

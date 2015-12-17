@@ -33,6 +33,7 @@ public class SceneAddressRecyclerAdapter extends RecyclerView.Adapter<SceneAddre
 
     private List<RealSceneLocationAreaInfo> mAddressList;
     protected Context mCtx;
+    private RecyclerView mRecyclerView;
 
     private int mOldSelectedPosition = 0;
     private int mSelectedPosition = 0;
@@ -48,8 +49,9 @@ public class SceneAddressRecyclerAdapter extends RecyclerView.Adapter<SceneAddre
     public static final int NO_CHANGE = 99;
     private int mMiddleItemPosition;
 
-    public SceneAddressRecyclerAdapter(Context context) {
+    public SceneAddressRecyclerAdapter(Context context,RecyclerView view) {
         mCtx = context;
+        mRecyclerView = view;
         initLinearLayoutManager();
     }
 
@@ -322,6 +324,7 @@ public class SceneAddressRecyclerAdapter extends RecyclerView.Adapter<SceneAddre
     }
 
     public void scrollToPosition(int position) {
+//        mLinearLayoutManager.smoothScrollToPosition(mRecyclerView, null, position);
         mLinearLayoutManager.scrollToPositionWithOffset(position, -mOffset);
     }
 
