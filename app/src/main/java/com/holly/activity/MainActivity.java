@@ -15,6 +15,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
+
 import com.holly.recyclerview.adapter.SceneAddressRecyclerAdapter;
 import com.holly.recyclerview.info.RealSceneLocationAreaInfo;
 import com.holly.recyclerview.listener.RealSceneAddressOnScrollListener;
@@ -105,7 +106,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
 
             @Override
-            public void onDataLoading() {// 触发数据加载
+            public void onDataLoading() {
 
             }
 
@@ -142,9 +143,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         if (v.getId() == R.id.scene_address_add) {
-            RecyclerView.ItemDecoration item= new RecyclerView.ItemDecoration() {
-            }
-            mSceneAddressRecyclerView.addItemDecoration();
 
         } else if (v.getId() == R.id.scene_address_remove) {
 
