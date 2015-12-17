@@ -1,25 +1,28 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/root_view" tools:context=".MainActivity">
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
 
+    <HorizontalScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp" >
 
-    <android.support.v7.widget.RecyclerView
-            android:id="@+id/scene_address_list"
-            android:layout_width="match_parent"
-            android:layout_height="95dp"
-            android:fadingEdge="none"
-            android:fadingEdgeLength="0dp"
-            android:scrollbars="none"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_margin="10dp" >
 
-    <Button
-            android:id="@+id/webview" android:layout_width="wrap_content" android:layout_height="wrap_content"
-            android:text="webview"
-            android:layout_below="@id/scene_address_list"/>
+            <GridView
+                android:id="@+id/grid"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center"
+                android:numColumns="auto_fit"
+                android:stretchMode="spacingWidthUniform" >
+            </GridView>
+        </LinearLayout>
+    </HorizontalScrollView>
 
-    <Button
-            android:id="@+id/scene_address_remove" android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="remove item"
-            android:layout_below="@id/webview"/>
-</RelativeLayout>
+</LinearLayout>

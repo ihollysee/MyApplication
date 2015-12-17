@@ -2,9 +2,10 @@
 <project version="4">
   <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
     <file url="file://$PROJECT_DIR$/app/src/main/java/com" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/holly/activity/MainActivity.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/holly/horizontallistview" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/holly/inject/InjectActivity.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/com/holly/inject/util/InjectUtils.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/holly/myandroidproject/MainActivity.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/holly/main/MainActivity.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/com/holly/webview/WebViewActivity.java" charset="UTF-8" />
     <file url="PROJECT" charset="UTF-8" />
   </component>

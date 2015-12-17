@@ -136,7 +136,7 @@ public class SceneAddressRecyclerAdapter extends RecyclerView.Adapter<SceneAddre
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(mCtx).inflate(R.layout.real_scene_address_recycler_item, parent, false);
+        View view = LayoutInflater.from(mCtx).inflate(R.layout.scene_address_recycler_item, parent, false);
         ViewHolder holder = new ViewHolder(view, this, mCtx);
         return holder;
     }
@@ -470,7 +470,7 @@ public class SceneAddressRecyclerAdapter extends RecyclerView.Adapter<SceneAddre
 
 
         private void onLoading() {
-            addressIcon.setImageResource(R.drawable.loading);
+            addressIcon.setImageResource(R.drawable.scene_address_loading);
             startRotateAnimation(addressIcon);
             addressIcon.setVisibility(View.VISIBLE);
             name.setVisibility(View.GONE);
