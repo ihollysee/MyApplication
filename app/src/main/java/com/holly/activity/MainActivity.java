@@ -20,6 +20,7 @@ import com.holly.recyclerview.adapter.SceneAddressRecyclerAdapter;
 import com.holly.recyclerview.info.RealSceneLocationAreaInfo;
 import com.holly.recyclerview.listener.RealSceneAddressOnScrollListener;
 import com.holly.user.activity.R;
+import com.holly.webview.WebViewActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,7 +43,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void initView() {
-        findViewById(R.id.scene_address_add).setOnClickListener(this);
+        findViewById(R.id.webview).setOnClickListener(this);
         findViewById(R.id.scene_address_remove).setOnClickListener(this);
     }
 
@@ -142,8 +143,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-        if (v.getId() == R.id.scene_address_add) {
-
+        if (v.getId() == R.id.webview) {
+            Intent intent = new Intent();
+            intent.setClass(this, WebViewActivity.class);
+            startActivity(intent);
         } else if (v.getId() == R.id.scene_address_remove) {
 
         }
