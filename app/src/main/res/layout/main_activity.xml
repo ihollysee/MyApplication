@@ -1,7 +1,8 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/root_view" tools:context=".MainActivity">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              android:id="@+id/root_view" tools:context=".MainActivity">
 
 
     <android.support.v7.widget.RecyclerView
@@ -14,12 +15,14 @@
 
     <Button
             android:id="@+id/webview" android:layout_width="wrap_content" android:layout_height="wrap_content"
-            android:text="webview"
-            android:layout_below="@id/scene_address_list"/>
+            android:text="webview"/>
 
     <Button
             android:id="@+id/horizontal_listview" android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="HorizontalListView"
-            android:layout_below="@id/webview"/>
-</RelativeLayout>
+            android:text="HorizontalListView"/>
+    <Button
+            android:id="@+id/amap" android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="amap"/>
+</LinearLayout>

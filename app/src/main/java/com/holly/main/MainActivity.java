@@ -5,6 +5,7 @@ import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.support.v7.app.AppCompatActivity;
@@ -15,7 +16,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
-
 import com.holly.horizontallistview.HorizontalListViewActivity;
 import com.holly.recyclerview.adapter.SceneAddressRecyclerAdapter;
 import com.holly.recyclerview.info.RealSceneLocationAreaInfo;
@@ -27,6 +27,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+    public static final String AMAPURI_AMAP = "amapuri://amap";
     private SceneAddressRecyclerAdapter mSceneAddressAdapter;
 
     @Override
@@ -46,6 +47,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void initView() {
         findViewById(R.id.webview).setOnClickListener(this);
         findViewById(R.id.horizontal_listview).setOnClickListener(this);
+        findViewById(R.id.amap).setOnClickListener(this);
     }
 
     private void initData() {
@@ -152,6 +154,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Intent intent = new Intent();
             intent.setClass(this, HorizontalListViewActivity.class);
             startActivity(intent);
+        } else if (v.getId() == R.id.amap) {
+            try {
+                Intent intent = new Intent();
+                Uri uri = Uri.parse(AMAPURI_AMAP);
+                intent.setData(uri);
+                startActivity(intent);
+            } catch (Exception e) {
+                e.printStackTrace();
+                Toast.makeText(getApplicationContext(), "无法处理" + AMAPURI_AMAP, Toast.LENGTH_SHORT).show();
+            }
         }
     }
 
